@@ -5,25 +5,23 @@ class ItemToPurchase:
         self.item_quantity = item_quantity
     def print_item_cost(self):
         total_cost = self.item_quantity * self.item_price
-        print(f"{self.item_name} {self.item_quantity} @ ${self.item_price} = ${total_cost}")
-        return total_cost
+        print(f"{self.item_name} {self.item_quantity} @ ${int(self.item_price)} = ${int(total_cost)}")
+        return int(total_cost)
 def main():
     print('Item 1')
     item_name = input("Enter the item name:")
     item_price = float(input("\nEnter the item price:"))
     item_quantity = int(input('\nEnter the item quantity:'))
     item1 =ItemToPurchase(item_name, item_price, item_quantity)
-
+    print()
     print('\nItem 2')
     item_name = input("Enter the item name:")
     item_price = float(input("\nEnter the item price:"))
     item_quantity = int(input('\nEnter the item quantity:'))
     item2 =ItemToPurchase(item_name, item_price, item_quantity)
-
-    print('\nTOTAL COST: ')
-    item1.print_item_cost()
-    item2.print_item_cost()
+    print()
+    print('\nTOTAL COST')
     total = item1.print_item_cost() + item2.print_item_cost()
-    print('Total: $',total)
+    print('\nTotal: ${}'.format(total))
 if __name__== "__main__" :
     main()
